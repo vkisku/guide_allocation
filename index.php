@@ -1,5 +1,6 @@
 <?php
 	include('includes/guide.php');
+	include('includes/mysqlDB.php');
 	$ob=new guide_alocation();
 	$students=array(array('id'=>112,'cgpa'=>4.5,'status'=>0),
 				array('id'=>113,'cgpa'=>5.5,'status'=>1),
@@ -47,4 +48,7 @@
 			echo "</br>";
 		}
 		
+		$db=new mysqlDB("localhost","root","");
+		$db->connection_open();
+		print_r($db->get_error());
  ?>
